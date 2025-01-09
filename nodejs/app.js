@@ -3,9 +3,9 @@
 // these are standard pattern in nodejs for handling asynchronous operations where the first parameter of the callback is reserved
 // for an error(If any occur).
 
-const fs = require("fs");
+import { readFile } from "fs";
 
-fs.readFile("myFile.txt", "utf8", (err, data) => {
+readFile("myFile.txt", "utf8", (err, data) => {
   if (err) {
     console.log("Error occured while reading file", err);
   }
