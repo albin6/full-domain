@@ -64,7 +64,7 @@ export class BSTree {
         const mid = treeNodes.length / 2
         const left = treeNodes.slice(0, mid)
         const right = treeNodes.slice(mid + 1)
-
+        
     }
     levelOrderTraversal() {
         const result = []
