@@ -5,6 +5,10 @@ import Test from "./components/Test";
 import TestWithParams from "./components/TestWithParams";
 import ThemeChangerComponent from "./components/ContextAPI/themeTest/ThemeChangerComponent";
 import ThemeProvider from "./components/ContextAPI/ThemeProvider";
+import Counter from "./components/counterRedux/Counter";
+
+import {Provider} from 'react-redux'
+import { store } from "./components/counterRedux/store";
 
 function Layout() {
   return (
@@ -18,13 +22,21 @@ function Layout() {
   );
 }
 
+// function App() {
+//   return (
+//     <>
+//       <ThemeProvider>
+//       <ThemeChangerComponent/>
+//       </ThemeProvider>
+//     </>
+//   )
+// }
+
 function App() {
   return (
-    <>
-      <ThemeProvider>
-      <ThemeChangerComponent/>
-      </ThemeProvider>
-    </>
+    <Provider store={store}>
+      <Counter/>
+    </Provider>
   )
 }
 
