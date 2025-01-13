@@ -72,6 +72,26 @@ class BSTNode {
       }
       return node
     }
+    isBST(node = this.root, min = null, max = null) {
+        if (!node || !node.left || !node.right) {
+            return true
+        }
+        if ((min  && node.value <= min) || (max && node.value >= max)) {
+            return false
+        }
+
+        return this.isBST(node.left, min, node.value) && this.isBST(node.right, node.value, max)
+    }
+    secondSmallest() {
+
+    }
+    inorderTraversal() {
+        const queue = [this.root]
+        const result = []
+        while (queue.length) {
+            const current = queue.shift()
+        }
+    }
   }
   
   const bst = new BSTree()
@@ -84,9 +104,8 @@ class BSTNode {
   bst.insertNode(35)
   bst.insertNode(32)
   bst.insertNode(25)
+
   
   console.dir(bst, {depth : null})
-  
-  bst.removeNode(30)
-  
-  console.dir(bst, {depth : null})
+
+  console.log(bst.isBST())
