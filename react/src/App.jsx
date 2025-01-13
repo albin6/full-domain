@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Test from "./components/Test";
 import TestWithParams from "./components/TestWithParams";
+import ThemeChangerComponent from "./components/ContextAPI/themeTest/ThemeChangerComponent";
+import ThemeProvider from "./components/ContextAPI/ThemeProvider";
 
 function Layout() {
   return (
@@ -17,7 +19,13 @@ function Layout() {
 }
 
 function App() {
-  return <Layout />;
+  return (
+    <>
+      <ThemeProvider>
+      <ThemeChangerComponent/>
+      </ThemeProvider>
+    </>
+  )
 }
 
 export default App;
