@@ -9,6 +9,8 @@ import Counter from "./components/counterRedux/Counter";
 
 import {Provider} from 'react-redux'
 import { store } from "./components/counterRedux/store";
+import Parent from "./components/memo-callback-usememo/Parent";
+import Timer from "./components/Timer";
 
 function Layout() {
   return (
@@ -32,11 +34,24 @@ function Layout() {
 //   )
 // }
 
+// function App() {
+//   return (
+//     <Provider store={store}>
+//       <Counter/>
+//     </Provider>
+//   )
+// }
+
+// function App() {
+//   return (
+//     <Parent/>
+//   )
+// }
+
+
 function App() {
   return (
-    <Provider store={store}>
-      <Counter/>
-    </Provider>
+    <Timer/>
   )
 }
 
